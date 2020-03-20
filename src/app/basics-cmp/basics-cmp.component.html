@@ -1,0 +1,32 @@
+<div> Months :
+  <select (change)="changeOfMonths($event)">
+    <option *ngFor="let i of months">{{i}}</option>
+  </select>
+</div>
+<br>
+<div>
+  <span *ngIf="isavailable; then condition1 else condition2">condition is valid</span>
+  <ng-template #condition1>Condition is valid</ng-template>
+  <ng-template #condition2>Condition is invalid</ng-template>
+</div>
+<br>
+<button (click)="myClickEvent($event)">Click Me!</button>
+<br><br>
+<b>Pipes</b><br>
+{{title | uppercase}}<br>
+{{title | lowercase}}<br>
+{{125.4 | currency:"USD":true}}<br>
+{{today | date:'d/M/y'}}<br>
+{{today | date:'shortTime'}}<br>
+{{345.56789 | number:'3.4-4'}}<br>
+{{0.5673 | percent}}<br>
+{{months | slice:2:6}}<br><br>
+<b>Custom Pipes</b><br>
+Square root of 25 is {{25 | sqrt}}<br>
+From the list {{numarray}} MAXIMUM : {{numarray | max}} AND MINIMUM : {{numarray | min}}<br><br>
+{{todaydate}}<br>
+<ul *ngFor="let data of httpdata">
+  <li>Name : {{data.name}} Address: {{data.address.city}}</li>
+</ul>
+<app-new-cmp></app-new-cmp>
+

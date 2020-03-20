@@ -1,0 +1,22 @@
+.tp-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+ }
+ .tp-radio-button {
+    margin: 5px;
+ }
+ .tp-selected-value {
+    margin: 15px 0;
+ }
+ .mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
+ 
+  table, th, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+ }

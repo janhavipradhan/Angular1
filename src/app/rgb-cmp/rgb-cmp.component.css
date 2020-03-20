@@ -1,0 +1,41 @@
+* {
+font-family: "Helvetica Neue", Helvetica;
+}
+
+.picker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 550px;
+    height: 450px;
+    border: 1px solid black;
+}
+
+p.r {
+    color: red;
+}
+
+p.g {
+    color: green;
+}
+
+p.b {
+    color: blue;
+}
+
+div.display {
+    width: 99.4%;
+    height: 100px;
+    background: rgba(127, 127, 127, 0.5);
+    margin-top: 63px;
+    border: 3px solid rgb(0, 0, 0);
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 100%;
+}

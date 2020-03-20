@@ -1,0 +1,167 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup" (ngSubmit)="onClickSubmitOrUpdate(firstFormGroup, flag)">
+      <ng-template matStepLabel>Personal Details</ng-template>
+      <mat-form-field>
+        <mat-select id="title" name="title" placeholder="Title" formControlName="title">
+          <mat-option value="Mr.">Mr.</mat-option>
+          <mat-option value="Ms.">Ms.</mat-option>
+          <mat-option value="Mrs.">Mrs.</mat-option>
+          <mat-option value="Dr.">Dr.</mat-option>
+          <mat-option value="Miss">Miss</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" id="firstName" matInput placeholder="First name" formControlName="firstName"
+          autocomplete="off" required>
+        <mat-error *ngIf="firstFormGroup.get('firstName').hasError('required')">
+          First Name is Required!
+        </mat-error>
+        <mat-error *ngIf="firstFormGroup.get('firstName').hasError('minlength')">
+          It should be atleast 3 characters long!
+        </mat-error>
+
+        <mat-error *ngIf="firstFormGroup.get('firstName').hasError('maxlength')">
+          It can be atmax 20 characters long!
+        </mat-error>
+
+        <mat-error *ngIf="firstFormGroup.get('firstName').hasError('pattern')">
+          It should only conatain A-Z or a-z!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" id="lastName" matInput placeholder="Last name" formControlName="lastName" autocomplete="off"
+          required>
+        <mat-error *ngIf="firstFormGroup.get('lastName').hasError('required')">
+          Last Name is Required!
+        </mat-error>
+        <mat-error *ngIf="firstFormGroup.get('lastName').hasError('minlength')">
+          It should be atleast 3 characters long!
+        </mat-error>
+
+        <mat-error *ngIf="firstFormGroup.get('lastName').hasError('maxlength')">
+          It can be atmax 20 characters long!
+        </mat-error>
+
+        <mat-error *ngIf="firstFormGroup.get('lastName').hasError('pattern')">
+          It should only conatain A-Z or a-z!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" id="suffix" matInput placeholder="Suffix" formControlName="suffix" autocomplete="off">
+        <mat-error *ngIf="firstFormGroup.get('suffix').hasError('pattern')">
+          It should only conatain A-Z or a-z!
+        </mat-error>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input type="text" id="jobTitle" matInput placeholder="Job Title" formControlName="jobTitle" autocomplete="off">
+        <mat-error *ngIf="firstFormGroup.get('jobTitle').hasError('pattern')">
+          It should only conatain A-Z or a-z!
+        </mat-error>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input type="tel" id="primaryPhone" matInput formControlName="primaryPhone" placeholder="Primary Phone"
+          autocomplete="off" maxlength="12" [value]="firstFormGroup.get('primaryPhone').value | updatedCellPhone"
+          onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106)|| (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )" required>
+        <mat-error *ngIf="firstFormGroup.get('primaryPhone').hasError('required')">
+          Primary Phone is Required!
+        </mat-error>
+        <mat-error *ngIf="firstFormGroup.get('primaryPhone').hasError('pattern')">
+          Standard Pattern : xxx-xxx-xxxx
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" id="ext" matInput formControlName="ext" autocomplete="off" placeholder="Extension"
+          onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106)|| (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )">
+        <mat-error *ngIf="firstFormGroup.get('ext').hasError('pattern')">
+          It should only conatain numbers!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="tel" id="cellPhone" autocomplete="off" matInput formControlName="cellPhone" maxlength="12"
+          placeholder="Cell Phone"
+          onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106)|| (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )"[value]="firstFormGroup.get('cellPhone').value | updatedCellPhone">
+        <mat-error *ngIf="firstFormGroup.get('cellPhone').hasError('pattern')">
+          Standard Pattern : xxx-xxx-xxxx
+        </mat-error>
+      </mat-form-field><br>
+      <mat-form-field>
+        <input type="text" id="fax" matInput autocomplete="off" formControlName="fax" maxlength="5" placeholder="Fax"
+          onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106)|| (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )">
+        <mat-error *ngIf="firstFormGroup.get('fax').hasError('pattern')">
+          It should only conatain numbers!
+        </mat-error>
+        <mat-error *ngIf="firstFormGroup.get('fax').hasError('maxlength')">
+          Maximum Length 5!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" id="email" matInput formControlName="email" autocomplete="off" placeholder="Email" required>
+        <mat-error *ngIf="firstFormGroup.get('email').hasError('required')">
+          Email is Required!
+        </mat-error>
+        <mat-error *ngIf="firstFormGroup.get('email').hasError('pattern')">
+          Enter a valid email
+        </mat-error>
+      </mat-form-field><br><br>
+      <mat-form-field>
+        <mat-select id="contactType" name="contactType" placeholder="Contact Type" autocomplete="off"
+          formControlName="contactType">
+          <mat-option value="Contact Person">Contact Person</mat-option>
+          <mat-option value="Direct Staff">Direct staff</mat-option>
+          <mat-option value="Main Office">Main Office</mat-option>
+          <mat-option value="Supervisor">Supervisor</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br><br><br>
+      <div>
+        <button mat-button type="submit" matStepperNext
+          [disabled]="!firstFormGroup.valid">{{flag ? 'Submit ' : 'Update'}}</button>
+      </div>
+      <button *ngIf="flag" mat-button type="button" (click)="stepper.reset()">Clear</button>
+      <button *ngIf="!flag" mat-button type="button" matStepperNext (click)="onClickCancel()">Cancel</button>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <ng-template matStepLabel>Contact Details Edit/Delete</ng-template>
+    <div *ngIf="customerdata.length > 0">
+      <table id="custtable">
+        <tr>
+          <th>Title</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Suffix</th>
+          <th>Job title</th>
+          <th>Primary Phone</th>
+          <th>Extension</th>
+          <th>Cell Phone</th>
+          <th>Fax</th>
+          <th>Email</th>
+          <th>Contact Type</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let data of customerdata">
+          <td>{{data.title}}</td>
+          <td>{{data.firstName}}</td>
+          <td>{{data.lastName}}</td>
+          <td>{{data.suffix}}</td>
+          <td>{{data.jobTitle}}</td>
+          <td>{{data.primaryPhone}}</td>
+          <td>{{data.ext}}</td>
+          <td>{{data.cellPhone}}</td>
+          <td>{{data.fax}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.contactType}}</td>
+          <td><button mat-button matStepperPrevious (click)="editContact(data)">Edit</button> <button mat-button
+              (click)="removeContact(data)">Delete</button></td>
+        </tr>
+      </table>
+    </div>
+    <br><br><br>
+    <div>
+      <button mat-button type="button" matStepperPrevious (click)="stepper.reset()">Add New Contact</button>
+
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

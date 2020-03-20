@@ -1,0 +1,72 @@
+[
+    {
+        "country": "India",
+        "unitsSold": 77,
+        "salesPrice": 100,
+        "sale": 7700,
+        "profit": 2250
+    },
+    {
+        "country": "USA",
+        "unitsSold": 35,
+        "salesPrice": 200,
+        "sale": 7000,
+        "profit": 4000
+    },
+    {
+        "country": "Canada",
+        "unitsSold": 67,
+        "salesPrice": 150,
+        "sale": 10050,
+        "profit": 3000
+    },
+    {
+        "country": "Germany",
+        "unitsSold": 30,
+        "salesPrice": 50,
+        "sale": 1500,
+        "profit": 450
+    },
+    {
+        "country": "Mexico",
+        "unitsSold": 10,
+        "salesPrice": 50,
+        "sale": 500,
+        "profit": 100
+    },
+    {
+        "country": "France",
+        "unitsSold": 90,
+        "salesPrice": 100,
+        "sale": 9000,
+        "profit": 1700
+    },
+    {
+        "country": "Belgium",
+        "unitsSold": 65,
+        "salesPrice": 50,
+        "sale": 3250,
+        "profit": 700
+    },
+    {
+        "country": "China",
+        "unitsSold": 70,
+        "salesPrice": 30,
+        "sale": 2100,
+        "profit": 550
+    },
+    {
+        "country": "Japan",
+        "unitsSold": 27,
+        "salesPrice": 150,
+        "sale": 4050,
+        "profit": 1000
+    },
+    {
+        "country": "Greece",
+        "unitsSold": 50,
+        "salesPrice": 75,
+        "sale": 3750,
+        "profit": 800
+    }
+]

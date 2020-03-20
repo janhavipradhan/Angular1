@@ -1,0 +1,54 @@
+[
+    {
+        "title": "Ms.",
+        "firstName": "Janhavi",
+        "lastName": "Pradhan",
+        "suffix": "S",
+        "jobTitle": "Intern",
+        "primaryPhone": "721-910-2737",
+        "ext": "91",
+        "cellPhone": "937-328-3699",
+        "fax": "123",
+        "email": "jp@gmail.com",
+        "contactType": "Other"
+    },
+    {
+        "title": "Ms.",
+        "firstName": "Madhura",
+        "lastName": "Bhattad",
+        "suffix": "M",
+        "jobTitle": "Intern",
+        "primaryPhone": "765-999-6754",
+        "ext": "91",
+        "cellPhone": "",
+        "fax": "",
+        "email": "mb@gmail.com",
+        "contactType": "Direct Staff"
+    },
+    {
+        "title": "Ms.",
+        "firstName": "Sakshi",
+        "lastName": "Reddy",
+        "suffix": "B",
+        "jobTitle": "Intern",
+        "primaryPhone": "567-123-7897",
+        "ext": "91",
+        "cellPhone": "783-836-6784",
+        "fax": "78902",
+        "email": "sr@gmail.com",
+        "contactType": "Direct Staff"
+    },
+    {
+        "title": "",
+        "firstName": "Muskaan",
+        "lastName": "Rajput",
+        "suffix": "",
+        "jobTitle": "",
+        "primaryPhone": "830-883-5590",
+        "ext": "",
+        "cellPhone": "",
+        "fax": "",
+        "email": "mr@gmail.com",
+        "contactType": ""
+    }
+]

@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <form id="myForm" [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata)">
+    <div class="input_field">
+      <select id="title" name="title">
+        <option value="">Title</option>
+        <option value="Mr.">Mr.</option>
+        <option value="Ms.">Ms.</option>
+        <option value="Mrs.">Mrs.</option>
+        <option value="Dr.">Dr.</option>
+        <option value="Miss">Miss</option>
+      </select>
+    </div>
+    <div class="input_field">
+      <input type="text" name="firstName" placeholder="First Name *" formControlName="firstName">
+    </div>
+    <div class="input_field">
+      <input type="text" name="lastName" placeholder="Last Name *" formControlName="lastName">
+    </div>
+    <div class="input_field">
+      <input type="text" name="suffix" placeholder="Suffix" formControlName="suffix">
+    </div>
+    <div class="input_field">
+      <input type="text" name="jobTitle" placeholder="Job Title" formControlName="jobTitle">
+    </div>
+    <div class="input_field">
+      <input type="tel" name="primaryPhone" placeholder="Primary Phone *" formControlName="primaryPhone">
+    </div>
+    <div class="input_field">
+      <input type="text" name="ext" placeholder="Extension" formControlName="ext">
+    </div>
+    <div class="input_field">
+      <input type="tel" name="cellPhone" placeholder="Cell Phone" formControlName="cellPhone">
+    </div>
+    <div class="input_field">
+      <input type="text" name="fax" placeholder="Fax" formControlName="fax">
+    </div>
+    <div class="input_field">
+      <input type="text" name="email" placeholder="Email ID *" formControlName="email">
+    </div>
+    <div class="input_field">
+      <select id="contactType" name="contactType">
+        <option value="">Contact Type</option>
+        <option value="Contact Person">Contact Person</option>
+        <option value="Direct Staff">Direct staff</option>
+        <option value="Main Office">Main Office</option>
+        <option value="Supervisor">Supervisor</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="btn">
+      <input type="submit" [disabled]="!formdata.valid" class="forsubmit" placeholder="Log In">
+    </div>
+  </form>
+  <div id="error_message"></div>
+</div>
